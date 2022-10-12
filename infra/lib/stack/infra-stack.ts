@@ -3,6 +3,8 @@ import { Construct } from "constructs";
 import { InfraStackProps } from "../types";
 import * as appsync from "../appsync";
 import * as congnito from "../cognito"
+import * as dynamodb from "../dynamodb"
+
 /**
  * AWSリソースを作成するStack.
  */
@@ -15,6 +17,11 @@ export class InfraStack extends cdk.Stack {
 
     // AppSyncリソースを作成する
     const { attachLambdaResolver, attachDynamodbResolver } = appsync.create(this, `${id}AppSync`, userPool)
+
+    // DynamoDBリソースを作成する
+    dynamodb.create(this, `${id}Dynamodb`, {
+      attachDynamodbResolver
+    })
 
   }
 }
