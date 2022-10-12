@@ -1,0 +1,44 @@
+# misc
+.DS_Store
+*/.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VisualStudioCode
+*/.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+## dotenv
+*/.env
+
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Repo build artifacts
+dist/
+build/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# JS
+*.js
+*/jest.config.js
+*.d.ts
+
+# Coverage directory used by tools like istanbul
+coverage/
+
