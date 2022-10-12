@@ -5,9 +5,13 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: 
+      - main
+    paths:
+      - 'backend/**'
   pull_request:
-    branches: [ "main" ]
+    paths:
+      - 'backend/**'
 
 jobs:
   build:
@@ -21,11 +25,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: backend
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 16
         cache: 'npm'
+        cache-dependency-path: subdir/package-lock.json
     - run: npm install
     - run: npm run build
     - run: npm test
