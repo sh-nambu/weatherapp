@@ -36,7 +36,6 @@ build/
 
 # JS
 *.js
-*/jest.config.js
 *.d.ts
 
 # Coverage directory used by tools like istanbul
