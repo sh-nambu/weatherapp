@@ -4,6 +4,13 @@ import { UserPool } from "aws-cdk-lib/aws-cognito";
 import { DockerImageFunction } from "aws-cdk-lib/aws-lambda";
 import { Table } from "aws-cdk-lib/aws-dynamodb";
 import { MappingTemplate } from "@aws-cdk/aws-appsync-alpha";
+
+export type InfraStackProps = StackProps & {
+  repo: { [key: string]: Repository };
+  imageTag: { [key: string]: string };
+  openWeatherMapApiKey: string;
+};
+
 export type WeatherInfoCreateProps = LambdaResolverAttachable & {
   image: Image;
   openWeatherMapApiKey: string;
