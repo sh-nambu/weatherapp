@@ -34,7 +34,6 @@ jobs:
         node-version: '16'
 #         cache: 'npm'
 #         cache-dependency-path: backend/package-lock.json
-    - run: npm ci
-#     - run: npm install
-#     - run: npm run build
+    - run: npm install
+    - run: npm run build
     - run: npm test
