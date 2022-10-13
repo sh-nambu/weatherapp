@@ -23,7 +23,7 @@ jobs:
          working-directory: backend
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -33,6 +33,8 @@ jobs:
       with:
         node-version: '16'
         cache: 'npm'
-    - run: npm install
-    - run: npm run build
+        cache-dependency-path: subdir/package-lock.json
+    - run: npm ci
+#     - run: npm install
+#     - run: npm run build
     - run: npm test
