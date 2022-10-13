@@ -28,12 +28,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: backend
+    - name: use Node.js 16
       uses: actions/setup-node@v3
       with:
         node-version: '16'
-#         cache: 'npm'
-#         cache-dependency-path: backend/package-lock.json
+        cache: 'npm'
+        cache-dependency-path: backend/package-lock.json
     - run: npm install
     - run: npm run build
     - run: npm test
